@@ -49,6 +49,14 @@ window.jQuery.each(Waypoint.adapters, function(i, adapter) {
           expect(waypoint instanceof Waypoint).toBeTruthy()
         })
 
+        it('returns an instance without `new`', function() {
+          waypoint = Waypoint({
+            element: document.getElementById('same1'),
+            handler: function() {}
+          })
+          expect(waypoint instanceof Waypoint).toBeTruthy()
+        })
+
         it('requires the element option', function() {
           expect(function() {
             waypoint = new Waypoint({
