@@ -6,6 +6,9 @@
 
   /* http://imakewebthings.com/waypoints/api/waypoint */
   function Waypoint(options) {
+    if (!(this instanceof Waypoint)) {
+      return new Waypoint(options)
+    }
     if (!options) {
       throw new Error('No options passed to Waypoint constructor')
     }
